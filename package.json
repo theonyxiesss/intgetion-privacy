@@ -1,0 +1,38 @@
+{
+  "name": "@intgetion/privacy",
+  "version": "0.1.0",
+  "description": "Privacy for INTGETION JOB LIST: the cookie consent journal and the orchestrator for data export, account deletion and retention, each module adding its own slice.",
+  "license": "UNLICENSED",
+  "type": "module",
+  "exports": {
+    ".": "./src/modules/privacy/service/index.ts",
+    "./ports": "./src/ports.ts",
+    "./server": "./src/server/app.ts"
+  },
+  "scripts": {
+    "dev": "tsx watch src/server/main.ts",
+    "start": "tsx src/server/main.ts",
+    "migrate": "tsx scripts/migrate.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@intgetion/kit": "github:theonyxiesss/intgetion-kit#v0.3.1",
+    "drizzle-orm": "^0.45.3",
+    "pino": "10.4.0",
+    "postgres": "^3.4.9",
+    "tsx": "^4.20.0",
+    "zod": "^4.6.5",
+    "@intgetion/analytics": "github:theonyxiesss/intgetion-analytics#v0.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "@types/pg": "^8.11.0",
+    "pg": "^8.13.0",
+    "typescript": "^5",
+    "vitest": "^5.0.3"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
